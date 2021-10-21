@@ -11,6 +11,10 @@ console.log(`KM da percorrere:`, askKm);
 const askAge = prompt("Quanti anni hai?");
 console.log(`Età:`, askAge);
 
+const price = 0.21 * askKm;
+console.log(`Prezzo biglietto:`, price);
+
+
 if ( askAge < 18 ) {
     console.log(`Utente è minorenne`);
 }
