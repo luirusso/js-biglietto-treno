@@ -12,16 +12,32 @@ const askAge = prompt("Quanti anni hai?");
 console.log(`Età:`, askAge);
 
 const price = 0.21 * askKm;
+const priceRounded = price.toFixed(2);
 console.log(`Prezzo biglietto:`, price);
 
+const underageDiscount = price * 20/100;
+console.log(`Sconto minorenni:`, underageDiscount);
+const underagePrice = price - underageDiscount;
+console.log(`Prezzo minorenni:`, underagePrice);
+const underagePriceRounded = underagePrice.toFixed(2);
+
+const over65Discount = price * 40/100;
+console.log(`Sconto over 65:`, over65Discount);
+const over65Price = price - over65Discount;
+console.log(`Prezzo over 65:`, over65Price);
+const over65PriceRounded = over65Price.toFixed(2);
 
 if ( askAge < 18 ) {
+    document.getElementById("ticket_price").innerHTML = `Il costo del tuo biglietto è ${underagePriceRounded}€`;
     console.log(`Utente è minorenne`);
 }
 else if ( askAge > 65 ) {
+    document.getElementById("ticket_price").innerHTML = `Il costo del tuo biglietto è ${over65PriceRounded}€`;
     console.log(`Utente è over 65`)
 }
 else if ( askAge >= 18 ) {
+    document.getElementById("ticket_price").innerHTML = `Il costo del tuo biglietto è ${price}€`;
     console.log(`Utente è maggiorenne`);
 }
+
 
