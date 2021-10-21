@@ -41,3 +41,7 @@ else if ( askAge >= 18 ) {
 }
 
 
+if ( isNaN( askKm, askAge) ) {
+    console.log(`Non hai inserito un valore numerico`)
+    document.getElementById("ticket_price").innerHTML = `I valori inseriti nei prompt non sono validi. Per favore inserire un numero.`
+}
